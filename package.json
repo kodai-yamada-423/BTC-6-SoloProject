@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "scripts": {
     "start": "nodemon server/app.js",
+    "renderF": "npm run dev && npm run build",
     "dev": "vite",
     "build": "vite build",
     "render": "npm install && npm run migrate ",
@@ -11,9 +12,7 @@
     "preview": "vite preview",
     "makeMigration": "knex migrate:make",
     "migrate": "knex migrate:latest",
-    "test": "mocha",
-    "reactBuild": "react-scripts build",
-    "reactStart": "react-scripts start"
+    "test": "mocha"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
