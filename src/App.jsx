@@ -4,6 +4,8 @@ import "./App.css";
 import axios from "axios";
 import Main from "./components/Main";
 
+axios.defaults.baseURL = "https://btc-6-soloproject-pokedex.onrender.com";
+
 export default function App() {
   return (
     <>

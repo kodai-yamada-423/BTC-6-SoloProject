@@ -64,7 +64,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
-app.use("/", express.static(__dirname + "/frontend/dist"));
+app.use("/", express.static(__dirname + "/dist"));
 
 //確認用
 app.get("/api", (req, res) => {
