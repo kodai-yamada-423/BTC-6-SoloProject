@@ -23,16 +23,14 @@ export default function Pokedata(props) {
           {pokemonName}
         </h3>
       </div>
-      <div>
+      <div style={{ maxHeight: "200px" }}>
         <img src={pokemonImg} alt="" className="img" />
       </div>
       <div>
         <div>
           <p>{pokemonType1}</p>
         </div>
-        <div>
-          <p>{pokemonType2}</p>
-        </div>
+        <div>{pokemonType2 ? <p>{pokemonType2}</p> : <Space></Space>}</div>
         <div>
           <p>{pokemonText}</p>
         </div>

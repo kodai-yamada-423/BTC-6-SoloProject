@@ -1,0 +1,8 @@
+.btnpanel {
+  justify-content: center;
+  display: flex;
+}
+
+.btns {
+  margin: 0 auto;
+}

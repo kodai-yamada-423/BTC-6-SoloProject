@@ -1,4 +1,4 @@
-import { ButtonGroup, IconButton } from "@mui/joy";
+import { ButtonGroup, IconButton, Stack } from "@mui/joy";
 import ArrowCircleLeftSharpIcon from "@mui/icons-material/ArrowCircleLeftSharp";
 import CatchingPokemonSharpIcon from "@mui/icons-material/CatchingPokemonSharp";
 import ArrowCircleRightSharpIcon from "@mui/icons-material/ArrowCircleRightSharp";
@@ -31,8 +31,14 @@ export default function Operate(props) {
 
   return (
     <>
-      <div>
-        <ButtonGroup color="success" size="lg" variant="solid">
+      <Stack alignItems="center">
+        <ButtonGroup
+          color="success"
+          size="lg"
+          variant="solid"
+          className="btns"
+          text-align="center"
+        >
           <IconButton onClick={async () => await backPokemon()}>
             <ArrowCircleLeftSharpIcon />
           </IconButton>
@@ -48,7 +54,7 @@ export default function Operate(props) {
             <ArrowCircleRightSharpIcon />
           </IconButton>
         </ButtonGroup>
-      </div>
+      </Stack>
     </>
   );
 }

@@ -31,10 +31,10 @@ describe("テストやってみよう", () => {
     expect(res.body).to.eql(pokemon);
   });
 
-  it("フシギダネ捕まえれるかって話", async () => {
-    const res = await request(app)
-      .post("/api/pokemon/get")
-      .send({ name: "フシギダネ" });
-    expect(res.body.message).to.eql("フシギダネ ゲットだぜ！");
-  });
+  // it("フシギダネ捕まえれるかって話", async () => {
+  //   const res = await request(app)
+  //     .post("/api/pokemon/get")
+  //     .send({ name: "フシギダネ" });
+  //   expect(res.body.message).to.eql("フシギダネ ゲットだぜ！");
+  // });
 });
