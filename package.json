@@ -9,7 +9,8 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "makeMigration": "knex migrate:make",
-    "migrate": "knex migrate:latest"
+    "migrate": "knex migrate:latest",
+    "test": "mocha"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
@@ -19,16 +20,21 @@
     "@mui/joy": "^5.0.0-beta.36",
     "@mui/material": "^5.15.18",
     "axios": "^1.7.2",
+    "chai": "^4.1.1",
+    "chai-http": "^4.4.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
+    "esm": "^3.2.25",
     "express": "^4.19.2",
     "framer-motion": "^11.2.6",
     "knex": "^3.1.0",
+    "mocha": "^10.4.0",
     "nodemon": "^3.1.0",
     "pg": "^8.11.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "styled-components": "^6.1.11"
+    "styled-components": "^6.1.11",
+    "supertest": "^7.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",

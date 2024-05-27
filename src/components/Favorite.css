@@ -1,0 +1,8 @@
+.pokemon-get {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.pokemon-get:hover {
+  color: green;
+}

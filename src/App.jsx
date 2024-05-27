@@ -7,10 +7,12 @@ import Main from "./components/Main";
 export default function App() {
   return (
     <>
-      <header>
+      <header className="header">
         <h1>ポケモン図鑑</h1>
       </header>
-      <Main></Main>
+      <div className="pokemonContainer">
+        <Main></Main>
+      </div>
     </>
   );
 }

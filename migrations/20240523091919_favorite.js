@@ -5,7 +5,11 @@
 exports.up = function (knex) {
   return knex.schema.createTable("favorite", (t) => {
     t.increments("id").primary();
-    t.integer("pokedata_id").references("id").inTable("pokedata").notNullable();
+    t.integer("pokedata_id")
+      .references("id")
+      .inTable("pokedata")
+      .notNullable()
+      .unique();
   });
 };
 

@@ -3,29 +3,29 @@ import ArrowCircleLeftSharpIcon from "@mui/icons-material/ArrowCircleLeftSharp";
 import CatchingPokemonSharpIcon from "@mui/icons-material/CatchingPokemonSharp";
 import ArrowCircleRightSharpIcon from "@mui/icons-material/ArrowCircleRightSharp";
 import { useState } from "react";
-import { getPokeData } from "../utils/pokedata";
+import { getPokeData, pokemonGet } from "../utils/pokedata";
 
 export default function Operate(props) {
-  const { setPokemonData, setNum, num } = props;
+  const { setPokemonData, setNum, num, pokemonName, setFlag, flag } = props;
+
   const nextPokemon = async () => {
     const addNum = Number(num) + 1;
     console.log(addNum);
     if (addNum < 152) {
-      setNum(addNum);
-      const pokeObj = await getPokeData(num);
+      const pokeObj = await getPokeData(addNum);
       console.log(pokeObj, num);
       setPokemonData(pokeObj);
+      setNum(addNum);
     }
   };
 
   const backPokemon = async () => {
-    const numNum = Number(num);
+    const numNum = Number(num) - 1;
     if (numNum > 0) {
-      console.log(numNum);
-      setNum(numNum - 1);
-      const pokeObj = await getPokeData(num);
+      const pokeObj = await getPokeData(numNum);
       console.log(pokeObj, num);
       setPokemonData(pokeObj);
+      setNum(numNum);
     }
   };
 
@@ -33,13 +33,18 @@ export default function Operate(props) {
     <>
       <div>
         <ButtonGroup color="success" size="lg" variant="solid">
-          <IconButton onClick={() => backPokemon()}>
+          <IconButton onClick={async () => await backPokemon()}>
             <ArrowCircleLeftSharpIcon />
           </IconButton>
-          <IconButton>
+          <IconButton
+            onClick={async () => {
+              await pokemonGet(pokemonName);
+              flag === true ? setFlag(false) : setFlag(true);
+            }}
+          >
             <CatchingPokemonSharpIcon />
           </IconButton>
-          <IconButton onClick={() => nextPokemon()}>
+          <IconButton onClick={async () => await nextPokemon()}>
             <ArrowCircleRightSharpIcon />
           </IconButton>
         </ButtonGroup>

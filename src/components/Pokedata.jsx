@@ -1,9 +1,15 @@
 import styled from "styled-components";
-import Search from "./Search";
+import "./Pokedata.css";
 
 export default function Pokedata(props) {
-  const { pokemonName, pokemonNum, pokemonType1, pokemonType2, pokemonText } =
-    props;
+  const {
+    pokemonName,
+    pokemonNum,
+    pokemonType1,
+    pokemonType2,
+    pokemonText,
+    pokemonImg,
+  } = props;
 
   const Space = styled.span`
     margin-right: 20px;
@@ -12,26 +18,23 @@ export default function Pokedata(props) {
   return (
     <>
       <div>
-        <Search></Search>
+        <h3>
+          <Space>No.{pokemonNum}</Space>
+          {pokemonName}
+        </h3>
+      </div>
+      <div>
+        <img src={pokemonImg} alt="" className="img" />
+      </div>
+      <div>
         <div>
-          <h3>
-            <Space>No.{pokemonNum}</Space>
-            {pokemonName}
-          </h3>
+          <p>{pokemonType1}</p>
         </div>
         <div>
-          <img src="" alt="" />
+          <p>{pokemonType2}</p>
         </div>
         <div>
-          <div>
-            <p>{pokemonType1}</p>
-          </div>
-          <div>
-            <p>{pokemonType2}</p>
-          </div>
-          <div>
-            <p>{pokemonText}</p>
-          </div>
+          <p>{pokemonText}</p>
         </div>
       </div>
     </>
