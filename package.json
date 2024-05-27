@@ -11,7 +11,9 @@
     "preview": "vite preview",
     "makeMigration": "knex migrate:make",
     "migrate": "knex migrate:latest",
-    "test": "mocha"
+    "test": "mocha",
+    "reactBuild": "react-scripts build",
+    "reactStart": "react-scripts start"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
